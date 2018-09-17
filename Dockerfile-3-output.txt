@@ -1,0 +1,99 @@
+Sending build context to Docker daemon  65.54kB
+Step 1/9 : FROM debian:stretch
+ ---> 3bbb526d2608
+Step 2/9 : RUN apt-get update
+ ---> Using cache
+ ---> d14cf94de60b
+Step 3/9 : RUN apt-get -y install git curl
+ ---> Using cache
+ ---> c32561947ae4
+Step 4/9 : RUN curl https://dl.google.com/go/go1.11.linux-amd64.tar.gz | tar xz -C /usr/local
+ ---> Using cache
+ ---> c8b18e232b4d
+Step 5/9 : ENV GOPATH="$HOME/go"
+ ---> Using cache
+ ---> 159a829ef9b4
+Step 6/9 : ENV PATH="${PATH}:/usr/local/go/bin:$GOPATH/bin"
+ ---> Using cache
+ ---> d8aa220269f1
+Step 7/9 : ENV HOME="/root"
+ ---> Using cache
+ ---> a52ff99647e4
+Step 8/9 : WORKDIR $HOME
+ ---> Using cache
+ ---> f586f86b9046
+Step 9/9 : RUN cd $HOME && go mod init github.com/hello/world && CGO_ENABLED=0 go get github.com/goreleaser/goreleaser
+ ---> Running in 16449466a390
+[91mgo: creating new go.mod: module github.com/hello/world
+[0m[91mgo: finding github.com/goreleaser/goreleaser v0.86.1
+[0m[91mgo: downloading github.com/goreleaser/goreleaser v0.86.1
+[0m[91mgo: finding github.com/apex/log/handlers/cli latest
+go: finding github.com/apex/log v1.0.0
+[0m[91mgo: finding github.com/caarlos0/ctrlc v1.0.0
+[0m[91mgo: finding github.com/fatih/color v1.7.0
+[0m[91mgo: finding github.com/goreleaser/nfpm v0.9.5
+go: finding github.com/masterminds/semver v1.4.2
+[0m[91mgo: finding github.com/mattn/go-zglob latest
+[0m[91mgo: finding github.com/pkg/errors v0.8.0
+[0m[91mgo: finding github.com/aws/aws-sdk-go/aws/credentials latest
+[0m[91mgo: downloading github.com/caarlos0/ctrlc v1.0.0
+[0m[91mgo: finding github.com/aws/aws-sdk-go/service/s3 latest
+[0m[91mgo: downloading github.com/apex/log v1.0.0
+[0m[91mgo: downloading github.com/masterminds/semver v1.4.2
+[0m[91mgo: downloading github.com/pkg/errors v0.8.0
+[0m[91mgo: finding github.com/aws/aws-sdk-go/aws latest
+[0m[91mgo: finding github.com/aws/aws-sdk-go/aws/session latest
+[0m[91mgo: downloading github.com/mattn/go-zglob v0.0.0-20180803001819-2ea3427bfa53
+[0m[91mgo: finding github.com/alecthomas/kingpin v2.2.6+incompatible
+[0m[91mgo: downloading github.com/goreleaser/nfpm v0.9.5
+[0m[91mgo: downloading github.com/alecthomas/kingpin v2.2.6+incompatible
+[0m[91mgo: finding github.com/goreleaser/nfpm/deb latest
+[0m[91mgo: downloading github.com/fatih/color v1.7.0
+[0m[91mgo: finding github.com/imdario/mergo v0.3.6
+[0m[91mgo: finding github.com/campoy/unique latest
+[0m[91mgo: finding github.com/goreleaser/nfpm/rpm latest
+[0m[91mgo: finding github.com/apex/log/handlers latest
+[0m[91mgo: downloading github.com/imdario/mergo v0.3.6
+[0m[91mgo: finding github.com/aws/aws-sdk-go/aws/credentials/stscreds latest
+[0m[91mgo: finding github.com/google/go-github/github latest
+[0m[91mgo: finding golang.org/x/sync/errgroup latest
+[0m[91mgo: downloading github.com/campoy/unique v0.0.0-20180121183637-88950e537e7e
+[0m[91mgo: finding github.com/mitchellh/go-homedir v1.0.0
+[0m[91mgo: finding gopkg.in/yaml.v2 v2.2.1
+[0m[91mgo: finding golang.org/x/oauth2 latest
+[0m[91mgo: downloading github.com/mitchellh/go-homedir v1.0.0
+[0m[91mgo: downloading gopkg.in/yaml.v2 v2.2.1
+[0m[91mgo: finding github.com/google/go-github v17.0.0+incompatible
+[0m[91mgo: downloading github.com/google/go-github v17.0.0+incompatible
+[0m[91mgo: downloading golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be
+[0m[91mgo: finding golang.org/x/sync latest
+[0m[91mgo: downloading golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f
+[0m[91mgo: finding github.com/aws/aws-sdk-go/service latest
+[0m[91mgo: finding github.com/aws/aws-sdk-go v1.15.35
+[0m[91mgo: downloading github.com/aws/aws-sdk-go v1.15.35
+[0m[91mgo: finding github.com/jmespath/go-jmespath v0.0.0-20160202185014-0b12d6b521d8
+[0m[91mgo: finding github.com/go-ini/ini v1.25.4
+[0m[91mgo: finding gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405
+[0m[91mgo: downloading github.com/go-ini/ini v1.25.4
+[0m[91mgo: downloading github.com/jmespath/go-jmespath v0.0.0-20160202185014-0b12d6b521d8
+[0m[91mgo: finding github.com/mattn/go-isatty v0.0.4
+[0m[91mgo: finding github.com/blakesmith/ar latest
+[0m[91mgo: finding github.com/google/go-querystring/query latest
+go: finding github.com/mattn/go-colorable v0.0.9
+[0m[91mgo: finding github.com/alecthomas/template latest
+[0m[91mgo: finding github.com/alecthomas/units latest
+[0m[91mgo: downloading github.com/mattn/go-isatty v0.0.4
+[0m[91mgo: downloading github.com/mattn/go-colorable v0.0.9
+[0m[91mgo: downloading github.com/blakesmith/ar v0.0.0-20150311145944-8bd4349a67f2
+[0m[91mgo: downloading github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf
+[0m[91mgo: downloading github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc
+[0m[91mgo: finding github.com/google/go-querystring v1.0.0
+[0m[91mgo: downloading github.com/google/go-querystring v1.0.0
+[0m[91mgo: finding golang.org/x/net/context latest
+[0m[91mgo: finding golang.org/x/net/context/ctxhttp latest
+[0m[91mgo: finding golang.org/x/net latest
+[0m[91mgo: downloading golang.org/x/net v0.0.0-20180911220305-26e67e76b6c3
+[0mRemoving intermediate container 16449466a390
+ ---> 158361efc10e
+Successfully built 158361efc10e
+Successfully tagged go-issue-27706-3:latest
